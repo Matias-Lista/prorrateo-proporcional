@@ -1,0 +1,58 @@
+
+#help-card {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#help-card .wrap {
+	width: 600px;
+	background: #181818;
+	padding: 25px;
+	border-radius: 15px;
+	box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+
+#help-card .wrap a {
+	color: #fff;
+	position: absolute;
+	top: 5px;
+	right: 15px;
+	text-decoration: none;
+}
+
+#help-card .wrap p {
+	margin-top: 10px;
+}
+
+#help-card .wrap ul,
+#help-card .wrap ol {
+	margin-top: 5px;
+	margin-left: 20px;
+}
+
+#help-card .wrap::-webkit-scrollbar{
+  width: 10px;
+  background: #252525;
+}
+
+#help-card .wrap::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: 5px;
+}
+
+@media (max-width: 650px) {
+	#help-card .wrap {
+		max-width: 90%;
+	}
+}

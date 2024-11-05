@@ -1,0 +1,214 @@
+/* - BUBBLES - */
+.bubble {
+	background: #181818;
+	border-radius: 25px;
+	padding: 25px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 
+			0 2px 4px rgba(255, 255, 255, 0.05);
+}
+
+.bubble-card {
+	width: 370px;
+	height: 460px;
+	text-align: center;
+}
+
+.text-bubble {
+	padding: 15px;
+	border-radius: 15px;
+	max-width: 1400px;
+	margin: auto;
+}
+
+.long-bubble {
+	text-align: center;
+	margin-top: 25px;
+	width: 850px;
+	height: 350px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.long-bubble .left { width: 40%; }
+.long-bubble .right { width: 60%; }
+
+.title-cont {
+	position: relative;
+}
+
+.title-cont a {
+	color: rgba(255, 255, 255, 0.7);
+	text-decoration: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	border-radius: 50%;
+	border: 1px solid rgba(255, 255, 255, 0.7);
+	width: 25px;
+	height: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bubble h4 {
+	margin-top: 10px;
+}
+
+
+.bubble h2 {
+	font-size: 2em;
+}
+
+.bubble .form .campo {
+	margin-top: 15px;
+}
+
+.bubble .form .campo input {
+	padding: 5px 15px 5px 15px;
+	width: calc(100% - 70px);
+	border-radius: 8px;
+	border: 2px solid rgba(255,255, 255, 0.6);
+}
+
+.bubble .form .campo input:focus {
+    border-color: #F29D38;
+    outline: none;
+}
+
+.bubble .form .campo-boton {
+	margin-top: 25px;
+}
+
+.bubble .form .campo button {
+	background: #181818;
+	cursor: pointer;
+	padding: 4px 15px;
+	font-size: 18px;
+	color: #fff;
+	border: 1px solid rgba(255, 255, 255, 1);
+	border-radius: 8px;
+	transition: color 0.1s ease, background 0.1s ease;
+}
+
+.bubble .form .campo button:hover {
+	background: #fff;
+	color: #000;
+}
+
+/*  ----------------  */
+/*     - TABLAS -     */
+/*  ----------------  */
+
+.bubble .tabla-container {
+	width: 100%;
+	margin-left: 6.5px;
+	margin-top: 20px;
+	max-height: 195px;
+	overflow-y: auto;
+	padding-right: 3px;
+	scrollbar-gutter: stable;
+	transition: margin-left 0.3s ease;
+}
+
+.bubble .tabla {
+	width:100%;
+	border-collapse: collapse;
+}
+
+.long-bubble .tabla-container {
+	height: 245px;
+	max-height: 245px;
+}
+
+.bubble .tabla-extendida {
+	margin-left: 0;
+}
+
+.bubble .tabla::-webkit-scrollbar, 
+.bubble .tabla-container::-webkit-scrollbar {
+  width: 10px;
+  background: #252525;
+}
+
+.bubble .tabla::-webkit-scrollbar-thumb,
+.bubble .tabla-container::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: 5px;
+}
+
+.bubble .tabla th {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.bubble .tabla .fila {
+	margin-bottom: 0;
+	display: flex;
+	justify-content: space-between;
+	font-size: 18px;
+	font-weight: 500;
+	padding: 10px 0px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.tabla caption {
+	position: absolute;
+	margin: -1000px;
+	height: 1px;
+	width: 1px;
+	overflow-y: hidden;
+}
+
+.bubble .tabla .monto {
+	color: #F29D38;
+}
+
+.bubble .gasto {
+	color: #ef5350;
+}
+
+.bubble .ingreso {
+	color: #66bb6a;
+}
+
+.bubble #grafico {
+	height: 180px;
+	width: 180px;
+	border-radius: 50%;
+	text-align: center;
+	margin: auto;
+	margin-top: 10px;
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+
+
+@media (max-width: 500px) {
+	.cont {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.long-bubble {
+		flex-direction: column;
+		max-width: 370px;
+		width: 100%;
+		height: auto;
+	}
+	.long-bubble .left,.long-bubble .right {
+		width: 100%;
+	}
+
+	.bubble {
+		height: auto;
+		margin-top: 25px;
+	}
+	
+	.bubble .tabla-container {
+		height: auto;
+		margin-left: 0;
+		padding-right: 0;
+		max-height: unset;
+	}
+}

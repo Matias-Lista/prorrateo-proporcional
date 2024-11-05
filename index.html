@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Prorrateo Proporcional de Gastos!</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+</head>
+<body>
+<div class="text-bubble bubble">
+	
+	<h1>
+		Prorrateo Proporcional de Gastos.
+	</h1>
+	
+	<p>
+		Al querer repartir gastos se suele hacer en partes iguales. Esto solo resulta justo cuando los ingresos de todos son iguales.
+		<br />
+		Para una distribución más equitativa, se puede repartir los gastos en proporción al ingreso de cada persona. Este método de <b>prorrateo de gastos</b> permite que todos puedan participar en los gastos comunes sin afectar en exceso a quienes tienen menos ingresos.
+	</p>
+</div>
+
+<div class="cont">
+
+	<div class="bubble bubble-card">
+		
+		<h2>Gastos</h2>
+
+		<form class="form" id="form-gasto">
+			
+			<div class="campo">
+				<input type="text" name="concepto" id="concepto" placeholder="Concepto..." />
+			</div>
+
+			<div class="campo">
+				<input type="number" name="monto" id="monto" step="1" placeholder="Monto..." />
+			</div>
+
+			<div class="campo campo-boton">
+
+				<button type="submit">
+					Agregar!
+				</button>
+			</div>
+		</form>
+
+		<div class="tabla-container" id="tabla-gastos-container">
+			
+			<table class="tabla">
+				<caption>Tabla de Gastos</caption>
+				<thead>
+					<tr class="fila">
+						<th scope="col" class="concepto">Concepto</th>
+						<th scope="col" class="monto">Monto</th>
+					</tr>
+				</thead>
+				<tbody aria-live="polite" id="tabla-gastos"></tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="bubble bubble-card">
+		<h2>Ingresos</h2>
+
+		<form class="form" id="form-ingresos">
+			
+			<div class="campo">
+				<input type="text" name="nombre" id="nombre" placeholder="Nombre..." />
+			</div>
+
+			<div class="campo">
+				<input type="number" name="monto_ingreso" id="monto_ingreso" step="1" placeholder="Monto..." />
+			</div>
+
+			<div class="campo campo-boton">
+				
+				<button type="submit">
+					
+					Agregar!
+				</button>
+			</div>
+		</form>
+
+		<div class="tabla-container" id="tabla-ingresos-container">
+			
+			<table class="tabla">
+				<caption>Tabla de Ingresos</caption>
+				<thead>
+					<tr class="fila">
+						<th scope="col" class="concepto">Nombre</th>
+						<th scope="col" class="monto">Monto</th>
+					</tr>
+				</thead>
+				<tbody aria-live="polite" id="tabla-ingresos"></tbody>
+			</table>
+		</div>
+	</div>
+	
+	<div class="bubble long-bubble">
+		
+		<div class="left">
+			
+			<h2>Prorrateo</h2>
+
+			<h3 id="ingreso-total-texto" class="ingreso">Ingreso total: $0</h3>
+			<h3 id="gasto-total-texto" class="gasto">Gasto total: $0</h3>
+
+			<div id="grafico"></div>
+		</div>
+
+		<div class="right">
+				
+			<span class="title-cont"><h4>Aporte por persona</h4><a href="javascript:void(0)" id="help-boton" aria-label="¿Cómo funciona el prorrateo proporcional?" aria-haspopup="dialog" aria-controls="help-card" style="color: #fff; filter: none;">&#10067;</a></span>
+					
+			<div class="tabla-container" id="tabla-aportes-container">
+				<table class="tabla">
+
+					<caption>Tabla de Aporte por Persona</caption>
+					<thead>
+						<tr class="fila">
+							<th scope="col" class="concepto">Nombre</th>
+							<th scope="col" class="monto">Monto</th>
+						</tr>
+					</thead>
+					<tbody aria-live="polite" id="tabla-aportes">
+						
+						<tr>
+							<td>
+								<span style="color: rgba(255, 255, 255, 0.6); justify-content: center; border-bottom: 0;">Cuando cargues al menos un gasto y un ingreso, los aportes se desglozarán aquí.</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="help-card" style="display: none;" aria-hidden="true" role="dialog" aria-labelledby="help-title">
+
+	<div class="wrap">
+
+		<a href="javascript:void(0)" id="help-close" aria-label="Cerrar explicación">&#x2716;</a>
+
+		<h2 id="help-title">¿Cómo funciona el prorrateo proporcional?</h2>
+		<p>
+			El aporte de cada persona es calculado en función de sus ingresos.
+			<br/>
+			El proceso se lleva a cabo de la siguiente manera:
+		</p>
+
+		<ol>
+			
+			<li>
+				<strong>Sumar los ingresos:</strong> Se suman los ingresos de todas las personas involucradas.
+			</li>
+
+			<li>
+				<strong>Calcular el porcentaje:</strong> Se determina qué porcentaje representa el ingreso de cada persona sobre el total.
+			</li>
+			<li>
+				<strong>Calcular el aporte:</strong> Cada persona deberá aportar su porcentaje correspondiente de cualquier gasto total.
+			</li>
+		</ol>
+
+		<p>
+			Por ejemplo, supongas que la persona 1 tiene un ingreso de $70 y la persona 2 tiene un ingreso de $30. En este caso el ingreso total es de $100. Esto significa que:
+		</p>
+
+		<ul>
+			<li>La persona 1 representa el 70% de los ingresos totales.</li>
+			<li>La persona 2 representa el 30% de los ingresos totales.</li>
+		</ul>
+		<p>
+			Si el gasto total es de $50, entonces:
+		</p>
+
+		<ul>
+			<li>La persona 1 debe aportar el 70% de $50, que equivale a $35.</li>
+			<li>La persona 2 debe aportar el 30% de $50, que equivale a $15.</li>
+		</ul>
+		<p>
+			
+		    De esta manera, el prorrateo proporcional asegura que cada persona contribuya de forma justa según sus ingresos.
+		</p>
+	</div>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/help.js"></script>
+</body>
+</html>
