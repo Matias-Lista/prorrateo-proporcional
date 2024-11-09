@@ -1,3 +1,4 @@
+[Read in English (English README)](README_EN.md)
 # Prorrateo Proporcional de Gastos
 
 Una herramienta web visualmente atractiva para la distribución equitativa de los gastos compartidos en función del ingreso, con un enfoque en la accesibilidad.
